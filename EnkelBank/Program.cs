@@ -1,13 +1,14 @@
 ﻿public class Kund {
     String förNamn {get; set; }
     String efterNamn;
-    List<String> accountNumber;
-    public String id;
+    String personNummer;
+    String kontoNummer;
 
-    public Kund(String förNamn, String efterNamn, String id) {
+    public Kund(String förNamn, String efterNamn, String personNummer, String kontoNummer) {
         this.förNamn = förNamn;
         this.efterNamn = efterNamn;
-        this.id = id;
+        this.personNummer = personNummer;
+        this.kontoNummer = kontoNummer;
     }
 }
 
@@ -35,14 +36,25 @@ public class Bank {
 
 static class Program{
     static void Main() {
-
+        string förNamn;
         System.Console.Write("Välkommen till banken, vad vill du göra?"
         + "\n" + "1. skapa ny kund"
         + "\n" + "2. skapa nytt konto"
         + "\n" + "3. koppla kund till konto"
         + "\n" + "4. ändra saldo på konto"
         + "\n" + "5. antal kunder" 
-        + "\n" + "6. totala bankens omsättning");
+        + "\n" + "6. totala bankens omsättning"
+        + "\n");
+        switch(Console.ReadLine())
+        {
+            case "1":
+                Console.Clear();
+                Console.WriteLine("ange ditt namn: ");
+                förNamn = Console.ReadLine();
+
+                Kund kund = new Kund(förNamn)
+                
+        }
 
     }
 }
