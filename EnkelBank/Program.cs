@@ -37,6 +37,10 @@ public class Bank {
 static class Program{
     static void Main() {
         string förNamn;
+        string efterNamn;
+        string personNummer;
+        string kontoNummer;
+        List<Kund> kunder = new List<Kund>();
         System.Console.Write("Välkommen till banken, vad vill du göra?"
         + "\n" + "1. skapa ny kund"
         + "\n" + "2. skapa nytt konto"
@@ -49,11 +53,40 @@ static class Program{
         {
             case "1":
                 Console.Clear();
-                Console.WriteLine("ange ditt namn: ");
+                Console.WriteLine("ange ditt förnamn: ");
                 förNamn = Console.ReadLine();
 
-                Kund kund = new Kund(förNamn)
+                Console.WriteLine("ange ditt efternam: ");
+                efterNamn = Console.ReadLine();
                 
+                Console.WriteLine("ange ditt personnummer: ");
+                personNummer = Console.ReadLine();
+
+                Console.WriteLine("ditt kontonummer är: " + personNummer);
+                kontoNummer = personNummer;
+
+                Kund kund = new Kund(förNamn, efterNamn, personNummer, kontoNummer);
+                kunder.Add(kund);
+                
+                Console.ReadLine();
+
+            break;
+            case "2":
+                Console.Clear();
+                Console.WriteLine("");
+            break;
+            case "3":
+
+            break;
+            case "4":
+
+            break;
+            case "5":
+
+            break;
+            case "6":
+
+            break;
         }
 
     }
